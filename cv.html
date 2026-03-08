@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Startsida</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About me</a></li>
+                <li><a href="cv.html" class="active">CV</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Fadi Mrito</h1>
+            <p>Fullstack Developer (.NET) | 25 years old</p>
+            <p>Email: mrito.fadi@hotmail.com | Location: Sweden</p>
+        </section>
+
+        <section>
+            <h2>Profile</h2>
+            <p>
+                Motivated fullstack developer currently studying .NET Framework at Chas Academy.
+                Passionate about building scalable web applications with clean architecture,
+                and writing maintainable, efficient code. Strong interest in backend development,
+                APIs, modern frontend technologies and a particular interest in the game development space.
+            </p>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <p><strong>Chasacademy .NET Fullstack Development Program</strong></p>
+            <p>
+                Currently on-going studies focoused on backend architecture, 
+                API development, database design and modern web technologies.
+            </p>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <p><strong>REST API Project</strong></p>
+            <p>
+                Built multiple minimal REST-APIs utilizing controllers and using C# 
+                and .NET Framework. Implemented CRUD operations, 
+                routing and basic authentication.
+            </p>
+
+            <p><strong>Portfolio Website</strong></p>
+            <p>
+                Designed and developed a responsive multi-page portfolio website 
+                using HTML, CSS and JavaScript. Includes interactives features 
+                and persistent theme functionality
+                
+            </p>
+        </section>
+
+        <section>
+            <h2>Work Experience</h2>
+            <p><strong>Freelancing IT & Hardware Expert</strong></p>
+            <p>
+                Provided on-site technical support to clients, 
+                including building custom computers, troubleshooting
+                hardware issues, installing or upgraindg components.
+                Gained practical experience in computer assembly,
+                diagnostics and problem-solving for various hardware
+                setups.
+            </p>
+
+            <p><strong>Game development within ROBLOX Lua</strong></p>
+            <p>
+                Created games within the ROBLOX engine that amassed more than 
+                20 million total game visitors. Multiples of games that were all
+                created from scratch and utilizing the ROBLOX Studio engine
+                to both create the 3D environment and program the games.
+            </p>
+        </section>
+
+        <section>
+            <h2>Languages</h2>
+            <p>Swedish - Fluent</p>
+            <p>English - Fluent</p>
+            <div class="print-btn-container">
+                <button id="print-cv-btn">Print CV</button>
+            </div>
+        </section>
+        
+        <!-- MODAL -->
+        <div class="modal hidden">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2 id="modal-title"></h2>
+                <p id ="modal-description"></p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p> © 2026 Fadi Mrito </p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

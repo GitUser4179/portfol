@@ -1,0 +1,41 @@
+/*
+    HOME.CSS
+    Home page layout, Main-welcome, Buttons
+*/
+
+.home-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    text-align: center;
+}
+
+/* Home buttons container */
+.home-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+
+}
+
+/* Each home button */
+.home-btn-card {
+    width: 100%;
+    max-width: 220px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    width: 220px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+@media (min-width: 768px) {
+    .home-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}

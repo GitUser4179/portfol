@@ -1,0 +1,24 @@
+/*
+    HERO.CSS
+    Hero Banner, Typography
+*/
+
+.hero-banner {
+    background: var(--hero-gradient);
+    padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 5vw, 2rem);
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+}
+
+.hero-banner h1 {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.hero-banner p {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin-bottom: 2rem;
+    color: var(--text-muted);
+}

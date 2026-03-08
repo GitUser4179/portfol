@@ -1,0 +1,72 @@
+/* 
+    LAYOUT.CSS
+    Body, Sections, Header/Footer, Main
+*/
+
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main-content */
+main {
+    flex: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* Sections */
+section {
+    width: 100%;
+    background-color: var(--bg-primary);
+    padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 5vw, 2rem);
+    border-radius: 0;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* Header */
+header {
+    background-color: var(--bg-header);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--bg-footer);
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem 1rem;
+    }
+
+    footer {
+        padding: 1rem;
+        font-size: 0.9rem; /* smaller on mobile */
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+}

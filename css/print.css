@@ -1,0 +1,59 @@
+/*
+    PRINT.CSS
+    Print-friendly Overrides
+*/
+
+@media print {
+
+    /* Reset background, colors, borders, shadows */
+    * {
+        background: none !important;
+        color: black !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    /* Hide footer, header, nav and buttons */
+    header,
+    footer,
+    .nav-menu,
+    button {
+        display: none !important;
+    }
+
+    /* Body layout */
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.5;
+        background: white !important;
+    }
+
+    /* Main content */
+    main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid black;
+        padding-bottom: 0.5rem;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-top: 1.5rem;
+    }
+
+    p {
+        margin-bottom: 0.8rem;
+    }
+
+    section {
+        border: none !important;
+        padding: 0;
+        break-inside: avoid;
+    }
+}

@@ -1,0 +1,107 @@
+/*
+    CARDS.CSS
+    Home, Portfolio Card Layouts
+*/
+
+/* Home cards */
+.home-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: clamp(1rem, 2vw, 2rem);
+    margin: 0 auto 3rem;
+    max-width: 900px;
+}
+
+/* Each Home Card */
+.home-card {
+    flex: 1 1 220px;
+    max-width: 380px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.home-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.home-card h2 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.home-card p {
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+/* Card Buttons inside Home Cards */
+.card-btn {
+    display: block;
+    width: 100%;
+    max-width: 180px;
+    margin: 0 auto;
+    text-decoration: none;
+    padding: 0.6rem 1.5rem;
+    background-color: var(--bg-header);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-weight: 500;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.card-btn:hover {
+    background-color: var(--bg-secondary);
+}
+
+/* Portfolio grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile: 1 column */
+    gap: clamp(1rem, 2vw, 2rem);
+    margin-top: 2rem;
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 600px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 992px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Each Project Card */
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+/* Project Images */
+.project img {
+    width: 100%;
+    height: auto; /* Maintains aspect ratio */
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+}
