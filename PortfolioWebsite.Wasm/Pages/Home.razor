@@ -1,0 +1,137 @@
+﻿@page "/"
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Fadi Mrito</h1>
+
+        <p>
+            I'm an aspiring ASP.NET full-stack developer focusing on building clean,
+            responsive web applications with C#, ASP.NET, Docker, React, TypeScript,
+            Vue, JavaScript and much more.
+        </p>
+
+        <p>
+            My current focus is developing large-scale distributed systems that power them,
+            as well as focusing on the architecture of developing said systems.
+        </p>
+
+        <p>
+            My personal interests within programming lie within data analysis, as I enjoy
+            using data-driven models to build reliable software and find advantages in strategy games.
+        </p>
+
+        <div class="hero-links">
+            <span>
+                Github:
+                <a class="hero-link" href="https://github.com/gituser4179" target="_blank" rel="noopener noreferrer">
+                    GitUser4179
+                </a>
+            </span>
+
+            <span>Email: <span class="hero-link">mrito&#46;fadi&#64;protonmail&#46;com</span></span>
+        </div>
+    </div>
+</section>
+
+<section class="projects">
+    <h2>Projects</h2>
+
+    <div class="project-grid">
+        @foreach (var project in Projects)
+        {
+            <article class="project-card">
+                <div class="project-card-header">
+                    <h3>@project.Title</h3>
+
+                    @if (project.IsOpenSource && !string.IsNullOrWhiteSpace(project.SourceUrl))
+                    {
+                        <a class="source-tag source-open"
+                           href="@project.SourceUrl"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Open Source
+                        </a>
+                    }
+                    else
+                    {
+                        <span class="source-tag source-closed">Closed Source</span>
+                    }
+                </div>
+
+                <img src="@project.ImagePath" alt="Screenshot of @project.Title" class="project-image" />
+
+                <p class="project-summary">@project.Summary</p>
+
+                <p class="project-description">@project.Description</p>
+
+                <div class="tech-tags">
+                    @foreach (var tag in project.TechTags)
+                    {
+                        <span class="tech-tag" style="--tag-color: @tag.Color">@tag.Name</span>
+                    }
+                </div>
+            </article>
+        }
+    </div>
+</section>
+
+@code {
+    private readonly TechTag csharp = new("C#", "#a78bfa");
+    private readonly TechTag aspnet = new("ASP.NET", "#7c3aed");
+    private readonly TechTag docker = new("Docker", "#38bdf8");
+    private readonly TechTag react = new("React", "#22d3ee");
+    private readonly TechTag kubernetes = new("Kubernetes", "#326ce5");
+    private readonly TechTag vue = new("Vue", "#42b883");
+    private readonly TechTag typescript = new("TypeScript", "#3178c6");
+    private readonly TechTag tailwind = new("Tailwind CSS", "#38bdf8");
+    private readonly TechTag sqlServer = new("SQL Server", "#cc2927");
+    private readonly TechTag frontend = new("Frontend", "#f472b6");
+    private readonly TechTag backend = new("Backend", "#fb923c");
+
+    private List<ProjectCard> Projects => new()
+    {
+        new ProjectCard(
+            "Athletiqa",
+            false,
+            null,
+            "/images/projects/athletiqa-project.png",
+            "Athletiqa helps young athletes connect with sponsors and receive financial support.",
+            "A full-stack social media platform built around athlete and sponsor accounts. " +
+            "The frontend uses feature-sliced design, while the backend follows vertical slice architecture with CQRS. " +
+            "The application includes database-backed user flows, Cloudinary image uploads, and integrated frontend/backend features. " +
+            "I collaborated with four full-stack developers, two UI/UX designers, and two DevOps developers in an agile workflow with daily standups and weekly check-ins.",
+            new() { frontend, backend, csharp, aspnet, docker, react, vue, sqlServer, kubernetes, typescript, tailwind }),
+
+        new ProjectCard(
+            "REST API Experiment",
+            true,
+            "https://github.com/GitUser4179/REST-API",
+            "/images/projects/restapi-project.jpg",
+            "REST API using controllers, DTOs, and a code-first database.",
+            "A small ASP.NET experiment built to practice controller-based REST APIs, DTOs, and code-first database setup. " +
+            "The project helped me learn how to separate sensitive model data from API-facing DTOs, seed data through ModelBuilder, and structure basic API endpoints.",
+            new() { backend, csharp, aspnet, sqlServer }),
+
+        new ProjectCard(
+            "AFGR Bank",
+            true,
+            "https://github.com/FrusTrick/AFGRBank",
+            "/images/projects/consoleapp-project.jpg",
+            "Console-only banking application.",
+            "An object-oriented banking system built entirely for the console without using a database. " +
+            "I collaborated with four other developers over a short period to implement multiple bank accounts, passwords, transactions, currencies, savings, login, loans, an admin menu, and validation. " +
+            "The project focused on learning the fundamentals of object-oriented programming.",
+            new() { backend, csharp })
+    };
+
+    private record ProjectCard(
+        string Title,
+        bool IsOpenSource,
+        string? SourceUrl,
+        string ImagePath,
+        string Summary,
+        string Description,
+        List<TechTag> TechTags);
+
+    private record TechTag(string Name, string Color);
+}
