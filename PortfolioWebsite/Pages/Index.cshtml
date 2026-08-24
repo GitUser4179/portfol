@@ -1,0 +1,81 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div id="network-bg" aria-hidden="true">
+
+</div>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Fadi Mrito</h1>
+        <p>
+            I'm an aspiring ASP.NET fullstack developer focusing on building clean, 
+            responsive web applications with C#, ASP.NET, Docker, React, TypeScript, Vue, JavaScript and much more. 
+        </p>
+        <p>
+            My current focus is developing large-scale distributed systems that power them, 
+            as well as focusing on the architecture of developing said systems.
+        </p>
+        <p>
+            My personal interests within programming lie within data analysis as I love using data driven models to utilize information to build reliable data driven software, 
+            or to get advantages in strategy games. 
+        </p>
+        <p>
+            I have a bunch of other projects that are still work-in-progress that you can ask me about if you're interested in what I'm currently up to :)
+        </p>
+        <div class="hero-links">
+            <span>Github: <a class="hero-link" href="https://github.com/gituser4179" target="_blank" rel="noopener noreferrer">GitUser4179</a></span>
+            
+            <span>Email: <a class="hero-link">mrito&#46;fadi&#64;protonmail&#46;com</a></span>
+        </div>
+    </div>
+</section>
+
+<section class="projects">
+    <h2>Projects</h2>
+
+    <div class="project-grid">
+        @foreach (var project in Model.Projects) /* u can find the function inside of the index.cshtml.cs object hidden inside of this file. */
+        {
+            <article class="project-card">
+                <div class="project-card-header">
+                    <h3>@project.Title</h3>
+
+                    @if (project.IsOpenSource)
+                    {
+                        <a class="source-tag source-open"
+                            href="@project.SourceUrl"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            Open Source
+                        </a>
+                    }
+                    else
+                    {
+                        <span class="source-tag source-closed">Closed Source</span>
+                    }
+                </div>
+
+                <img src="@project.ImagePath" alt="Screenshot of @project.Title" class="project-image" />
+                
+                <p class="project-summary">
+                    @project.Summary
+                </p>
+
+                <p class="project-description">
+                    @project.Description
+                </p>
+
+                <div class="tech-tags">
+                    @foreach (var tag in project.TechTags)
+                    {
+                        <span class="tech-tag" style="--tag-color: @tag.Color">@tag.Name</span>
+                    }
+                </div>
+            </article>
+        }
+    </div>
+</section>
