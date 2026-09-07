@@ -82,11 +82,17 @@
     private readonly TechTag react = new("React", "#22d3ee");
     private readonly TechTag kubernetes = new("Kubernetes", "#326ce5");
     private readonly TechTag vue = new("Vue", "#42b883");
+    private readonly TechTag vite = new("Vite", "#646cff");
     private readonly TechTag typescript = new("TypeScript", "#3178c6");
     private readonly TechTag tailwind = new("Tailwind CSS", "#38bdf8");
     private readonly TechTag sqlServer = new("SQL Server", "#cc2927");
     private readonly TechTag frontend = new("Frontend", "#f472b6");
     private readonly TechTag backend = new("Backend", "#fb923c");
+    private readonly TechTag testing = new("Testing", "#bef264");
+    private readonly TechTag architecture = new("Architecture", "#facc15");
+    private readonly TechTag efCore = new("EF Core", "#34d399");
+    private readonly TechTag openApi = new("OpenAPI", "#f59e0b");
+    private readonly TechTag localFirst = new("Local-first", "#94a3b8");
 
     private List<ProjectCard> Projects => new()
     {
@@ -100,13 +106,47 @@
             "The frontend uses feature-sliced design, while the backend follows vertical slice architecture with CQRS. " +
             "The application includes database-backed user flows, Cloudinary image uploads, and integrated frontend/backend features. " +
             "I collaborated with four full-stack developers, two UI/UX designers, and two DevOps developers in an agile workflow with daily standups and weekly check-ins.",
-            new() { frontend, backend, csharp, aspnet, docker, react, vue, sqlServer, kubernetes, typescript, tailwind }),
+            new() { frontend, backend, csharp, aspnet, docker, react, vite, sqlServer, kubernetes, typescript, tailwind }),
+
+        new ProjectCard(
+            "Uma Planner",
+            false,
+            null,
+            "images/projects/uma-planner-project.png",
+            "Local-first banner and currency planner for Uma Musume.",
+            "A full-stack planning app built to keep game-specific probability and resource logic separate from UI concerns. " +
+            "The backend uses ASP.NET Core Minimal APIs, C# domain services, JSON-backed repositories, and xUnit coverage for planner rules and banner data validation. " +
+            "The frontend uses React, TypeScript, Vite, Tailwind CSS, TanStack Query, React Router, localStorage persistence, and import/export backup flows. " +
+            "This project helped me practice clean architecture, feature-based frontend structure, and writing tests around data-heavy business rules.",
+            new() { frontend, backend, csharp, aspnet, react, typescript, tailwind, localFirst, architecture, testing }),
+
+        new ProjectCard(
+            "SMC",
+            true,
+            "https://github.com/01y7z/SMC",
+            "images/projects/smc-project.png",
+            "BlueSky post utility focused on parsing, API calls, and tests.",
+            "A Vue and TypeScript project for validating BlueSky post URLs and fetching public post data from the BlueSky API. " +
+            "The useful part of this project is not the size of the app, but the discipline around edge cases: URL parsing, typed request helpers, user-facing validation, and failure states. " +
+            "It also includes Vitest unit tests and Playwright end-to-end tests, which made it a focused exercise in making small frontend behavior reliable.",
+            new() { frontend, vue, typescript, tailwind, testing }),
+
+        new ProjectCard(
+            "FestivalAPI",
+            true,
+            "https://github.com/GitUser4179/FestivalAPI",
+            "images/projects/festivalapi-project.png",
+            "Collaborative ASP.NET Core API with documented endpoints and SQLite persistence.",
+            "A team-built API project in C# and ASP.NET Core targeting .NET 10. " +
+            "It uses Entity Framework Core with SQLite, OpenAPI, and Scalar for API exploration. " +
+            "This project shows API modeling, database-backed endpoints, and collaboration around a shared backend codebase.",
+            new() { backend, csharp, aspnet, efCore, openApi }),
 
         new ProjectCard(
             "REST API Experiment",
             true,
             "https://github.com/GitUser4179/REST-API",
-            "images/projects/restapi-project.jpg",
+            "images/projects/rest-api-project.png",
             "REST API using controllers, DTOs, and a code-first database.",
             "A small ASP.NET experiment built to practice controller-based REST APIs, DTOs, and code-first database setup. " +
             "The project helped me learn how to separate sensitive model data from API-facing DTOs, seed data through ModelBuilder, and structure basic API endpoints.",
@@ -116,11 +156,11 @@
             "AFGR Bank",
             true,
             "https://github.com/FrusTrick/AFGRBank",
-            "images/projects/consoleapp-project.jpg",
-            "Console-only banking application.",
-            "An object-oriented banking system built entirely for the console without using a database. " +
-            "I collaborated with four other developers over a short period to implement multiple bank accounts, passwords, transactions, currencies, savings, login, loans, an admin menu, and validation. " +
-            "The project focused on learning the fundamentals of object-oriented programming.",
+            "images/projects/afgr-bank-project.png",
+            "Object-oriented banking system with accounts, transfers, loans, and currency conversion.",
+            "The starting point of my studies, built collaboratively in C#, AFGR Bank models customers, " +
+            "administrators, accounts, transactions, loans, savings, and exchange rates without a database." +
+            "The project focused on class responsibilities, validation, role-specific workflows, and maintaining consistent account state across financial operations",
             new() { backend, csharp })
     };
 
